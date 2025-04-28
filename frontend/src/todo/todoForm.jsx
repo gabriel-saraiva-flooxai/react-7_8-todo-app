@@ -3,6 +3,15 @@ import Grid from "../template/grid";
 import IconButton from "../template/iconButton";
 
 export default function TodoForm(props) {
+
+    const keyHnadler = (e) => {
+        if (e.key === 'Enter') {
+            e.shiftKey ? props.handleSearch() : props.handleAdd()
+        } else if (e.key === 'Escape') {
+            props.handleClear()
+        }
+    }
+
     return (
         <div role="form" className="todoForm">
 
